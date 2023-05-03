@@ -64,15 +64,15 @@ tr:not(:first-child):not(:last-child):active{
 }
 
 
-tr:not(:first-child) > td:last-child{
+tr > td:last-child{
     padding: 0;
 }
 
-tr:not(:last-child) > td:not(:last-child):nth-child(even){
+tr > td:not(:last-child):nth-child(even){
     background-color: var(--even-cell-color);
 }
 
-tr:not(:last-child) > td:not(:last-child):nth-child(odd){
+tr > td:not(:last-child):nth-child(odd){
     background-color: var(--odd-cell-color);
 }
 
@@ -101,8 +101,7 @@ i.fa-circle-xmark:hover{
 
 i.fa-plus{
     margin-top: 20px;
-    float:left;
-    font-size: 35px;
+    font-size: 2em;
     border-radius: 10px;
     padding: 10px;
     color: rgb(68, 68, 68);
@@ -126,8 +125,10 @@ i.fa-solid.fa-volume-high:hover,  i.fa-solid.fa-volume-xmark:hover{
     cursor:pointer;
 }
 
-.options > input, .options > button{
+.options > *{
     margin-top: 20px;
+    
+    margin-right: 20px;
 }
 
 th.silenced{
@@ -165,19 +166,18 @@ button{
     padding-left: 1em;
     padding-right: 1em;
     border-radius: 30px;
-    margin-right: 20px;
 
     transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-button.run{
-    color: var(--primary-color);
-    background-color: var(--file-cell-color);
+button.primary{
+    color: var(--silenced-header-color);
+    background-color: var(--primary-color);
 }
 
-button.export{
-    color: var(--file-cell-color);
-    background-color: var(--primary-color);
+button.secondary{
+    color: black;
+    background-color: white;
 }
 
 button:hover{
@@ -185,13 +185,21 @@ button:hover{
     cursor: pointer;
 }
 
+input[type="number"], input[type="text"]{
+    border: none;
+    font-size: 2em;
+
+}
+
 input[type="number"]{
     border-radius: 30px;
-    font-size: 2em;
     padding-left: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     background-color: var(--primary-color);
-    border: none;
+    width: 25%;
+}
+input[type="number"]::placeholder{
+    color: rgb(0, 0, 0);
 }
 
 input:focus{
@@ -199,6 +207,33 @@ input:focus{
 }
 
 input::-webkit-inner-spin-button{
+    display: none;
+}
+
+input.partName{
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+i.addPart{
+    color: white;
+    background-color: var(--file-cell-color);
+}
+
+i.closePart{
+    font-size: 4em;
+    float: right;
+    margin-right: 20px;
+    color: rgb(237, 254, 245);
+}
+
+div#partition{
+    margin-bottom: 50px;
+}
+
+#partition:first-child{
     display: none;
 }
 
@@ -211,7 +246,7 @@ input::-webkit-inner-spin-button{
     --primary-color: #45d369;
 
     --silenced-played-cell: #f3ff9c;
-    --silenced-header-color:rgb(10,10,10);
+    --silenced-header-color:rgb(21, 21, 21);
     --silenced-odd-cell-color:rgb(129, 129, 129);
     --silenced-even-cell-color:rgb(101, 101, 101);
 }

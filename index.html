@@ -22,22 +22,35 @@
     />
   </head>
   <body>
-    <table>
-      <tbody>
-        <tr>
-          <th><i class="fa-solid fa-file"></i> Files</th>
-          <th colspan="8"><i class="fa-solid fa-music"></i> Notes</th>
-        </tr>
-        <tr>
-          <td colspan="9"><i class="fa-solid fa-plus" id="addRow"></i></td>
-        </tr>
-      </tbody>
-    </table>
+    <section id="partitions">
+      <div id="partition" data-cycle="1" data-notes="8" data-delay="300">
+        <input class="partName" id="partName" type="text" placeholder="Partition name..."/>
+        <i class="fa-solid fa-circle-xmark closePart" id="closePart"></i>
+        <table>
+          <tbody>
+            <tr>
+              <th><i class="fa-solid fa-file"></i> Files</th>
+              <th colspan="8"><i class="fa-solid fa-music"></i> Notes</th>
+            </tr>
+            
+          </tbody>
+        </table>
 
+        <div class="options">
+          <i class="fa-solid fa-plus" id="addRow"></i>
+          <input id="delay" placeholder="Delay..." type="number"/>
+          <input id="repeat" placeholder="Repeat time..." type="number"/>
+          <!--<input id="notes" placeholder="Notes..." type="number"/>-->
+        </div>
+      </div>      
+    </section>
+    
+
+    <i class="fa-solid fa-plus addPart" id="addPart"></i>
     <div class="options">
-      <button class="run" id="run">Run</button>
-      <input id="delay" placeholder="Delay..." value="0.2" type="number"/>
+      <button data-play="false" class="primary" id="run"><i class="fa-solid fa-play"></i></button>
     </div>
+    
     
   </body>
 </html>
