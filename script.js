@@ -185,7 +185,7 @@ runButton.addEventListener('click', function () {
     }
 })
 
-var delayInput = document.getElementById300('delay');
+var delayInput = document.getElementById('delay');
 delayInput.addEventListener('change', function(){
     if (delayInput.value < 0){
         delayInput.value = Math.abs(delayInput.value);
